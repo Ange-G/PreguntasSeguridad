@@ -13,12 +13,22 @@ export class TgfsComponent implements OnInit {
   poliza:any;
   ramos:any;
   per:any;
+  nom:any;
+  claveCliente:any;
+
   constructor (db:AngularFireDatabase,a:AngularFireDatabase){
+ 
     db.object('/clientes/TGFS8822339S0/datosCliente')
       .valueChanges()
       .subscribe(clientes=> {
         this.clientes= clientes;
         console.log(this.clientes);
+      });
+    db.object('/clientes/TGFS8822339S0/datosCliente/nombreCompleto')
+      .valueChanges()
+      .subscribe(nom=> {
+        this.nom= nom;
+        console.log(this.nom);
       });
       a.object('/clientes/TGFS8822339S0/datosPoliza')
       .valueChanges()
@@ -58,7 +68,7 @@ export class TgfsComponent implements OnInit {
   }
   size: NzButtonSize = 'large';
 
+  ngOnInit() {
+    // Called after the constructor and called  after the first ngOnChanges() 
+ }
 }
-
-
-export class NzDemoBreadcrumbSeparatorComponent {}
