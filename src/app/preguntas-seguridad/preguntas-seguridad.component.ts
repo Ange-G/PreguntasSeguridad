@@ -16,7 +16,7 @@ export class PreguntasSeguridadComponent implements OnInit {
   per:any;
   nom:any;
   claveCliente:any;
-
+  id:any;
   constructor (db:AngularFireDatabase,a:AngularFireDatabase){
    /* db.object('clientes')
     .valueChanges()
@@ -75,7 +75,7 @@ export class PreguntasSeguridadComponent implements OnInit {
   size: NzButtonSize = 'large';
 
   ngOnInit() {
-    // Called after the constructor and called  after the first ngOnChanges() 
+    
  }
 }
 

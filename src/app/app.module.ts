@@ -22,12 +22,13 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule} from 'angularfire2';
 import {environment} from '../environments/environment';
 import { TgfsComponent } from './tgfs/tgfs.component';
-//import { TgfsComponent } from './tgfs/tgfs.component';
 
 registerLocaleData(es);
 
 const rutas: Routes =[
-  {path: 'preguntas-seguridad', component: PreguntasSeguridadComponent}
+  {path: 'preguntas-seguridad/RISW8822119S0', component: PreguntasSeguridadComponent},
+  {path: 'preguntas-seguridad/TGFS8822339S0', component: TgfsComponent},
+  
 ]
 
 @NgModule({
@@ -35,7 +36,6 @@ const rutas: Routes =[
     AppComponent,
     PreguntasSeguridadComponent,
     TgfsComponent
-   // TgfsComponent
   ],
   imports: [
     BrowserModule,
