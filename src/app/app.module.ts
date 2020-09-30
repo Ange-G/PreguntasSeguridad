@@ -21,7 +21,6 @@ import es from '@angular/common/locales/es';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule} from 'angularfire2';
 import {environment} from '../environments/environment';
-import { TgfsComponent } from './tgfs/tgfs.component';
 
 registerLocaleData(es);
 const rutas: Routes =[
@@ -45,8 +44,7 @@ const rutas: Routes =[
 @NgModule({
   declarations: [
     AppComponent,
-    PreguntasSeguridadComponent,
-    TgfsComponent
+    PreguntasSeguridadComponent
   ],
   imports: [
     BrowserModule,
