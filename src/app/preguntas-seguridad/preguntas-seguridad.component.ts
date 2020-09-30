@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NzButtonSize } from 'ng-zorro-antd/button';
 import { AngularFireDatabase } from 'angularfire2/database';
-
+import { Router, ActivatedRoute, ParamMap, Params  } from '@angular/router';
 
 @Component({
   selector: 'app-preguntas-seguridad',
@@ -9,54 +9,78 @@ import { AngularFireDatabase } from 'angularfire2/database';
   styleUrls: ['./preguntas-seguridad.component.css']
 })
 export class PreguntasSeguridadComponent implements OnInit {
-
   clientes:any;
-  poliza:any;
-  ramos:any;
-  per:any;
-  nom:any;
-  claveCliente:any;
-  id:any;
-  constructor (db:AngularFireDatabase,a:AngularFireDatabase){
-   /* db.object('clientes')
-    .valueChanges()
-    .subscribe(claveCliente=>{
-      this.claveCliente=claveCliente;
-      console.log(this.claveCliente);
-    });*/
-    db.object('/clientes/RISW8822119S0/datosCliente')
-      .valueChanges()
-      .subscribe(clientes=> {
-        this.clientes= clientes;
-        console.log(this.clientes);
-      });
-    db.object('/clientes/RISW8822119S0/datosCliente/nombreCompleto')
-      .valueChanges()
-      .subscribe(nom=> {
-        this.nom= nom;
-        console.log(this.nom);
-      });
-      a.object('/clientes/RISW8822119S0/datosPoliza')
-      .valueChanges()
-      .subscribe(poliza=> {
-        this.poliza= poliza;
-        console.log(this.poliza);
-      });
-      db.object('/ramos')
-      .valueChanges()
-      .subscribe(ramos=> {
-        this.ramos= ramos;
-        console.log(this.ramos);
-      });
-      db.object('/perfiles')
-      .valueChanges()
-      .subscribe(per=> {
-        this.per= per;
-        console.log(this.per);
-      });
-    }
-    
+  poliza: any;
+  poliza2: any;
+  ramos: any;
+  perfiles: any;
+  nombreC: any;
+  claveCliente: string;
 
+
+  constructor(db:AngularFireDatabase, private router: Router, private ActivatedRoute: ActivatedRoute) {
+
+  /*   clientes$;
+    this.clientes$ = db.object('/course'); */
+       //Firebase
+/*         var claveCliente = "TGFS8822339S0"; 
+console.log(claveCliente); */
+this.ActivatedRoute.paramMap.subscribe((parametros: ParamMap) => {
+  this.claveCliente = String(parametros.get("claveCliente"));
+  console.log("clave cliente",this.claveCliente)
+} )
+
+console.log("constructor", this.claveCliente);
+
+ db.object(`/clientes/${this.claveCliente}/datosCliente`)
+.valueChanges()
+.subscribe(clientes=> {
+  this.clientes= clientes;
+  console.log(this.clientes);
+});
+
+
+db.object(`/clientes/${this.claveCliente}/datosPoliza`)
+.valueChanges()
+.subscribe(poliza=> {
+  this.poliza= poliza;
+  console.log(this.poliza);
+});
+ db.object(`/clientes/${this.claveCliente}/datosCliente/nombreCompleto`)
+.valueChanges()
+.subscribe(nombreC=> {
+  this.nombreC= nombreC;
+  console.log(this.nombreC);
+});
+
+db.object('/ramos')
+.valueChanges()
+.subscribe(ramos=> {
+  this.ramos= ramos;
+  console.log(this.ramos);
+});
+
+db.object('/perfiles')
+.valueChanges()
+.subscribe(perfiles=> {
+  this.perfiles= perfiles;
+  console.log(this.perfiles);
+});
+
+}
+//ruta dinamica
+
+ngOnInit (): void  {
+  /* this.claveCliente = this.route.snapshot.paramMap.get('claveCliente'); */
+
+  }
+
+   
+
+
+  
+  
+//Ng Zorro
   isVisible = false;
 
   showModal(): void {
@@ -74,10 +98,6 @@ export class PreguntasSeguridadComponent implements OnInit {
   }
   size: NzButtonSize = 'large';
 
-  ngOnInit() {
-    
- }
 }
-
 
 export class NzDemoBreadcrumbSeparatorComponent {}

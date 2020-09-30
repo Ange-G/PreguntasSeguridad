@@ -24,12 +24,23 @@ import {environment} from '../environments/environment';
 import { TgfsComponent } from './tgfs/tgfs.component';
 
 registerLocaleData(es);
-
 const rutas: Routes =[
-  {path: 'preguntas-seguridad/RISW8822119S0', component: PreguntasSeguridadComponent},
-  {path: 'preguntas-seguridad/TGFS8822339S0', component: TgfsComponent},
-  
-]
+  /*   { //Si pone La ruta principa lhttp://localhost:4200/  te redirigira a la ruta de preguntas-seguridad
+      path:'',
+      pathMatch: 'full',
+      redirectTo: 'preguntas-seguridad'
+    }, */
+    { //RutaSimple
+      path: 'preguntas-seguridad',
+      component: PreguntasSeguridadComponent
+    },
+    { //Ruta dinamica
+      path: 'preguntas-seguridad/:claveCliente',
+      component: PreguntasSeguridadComponent,
+    },
+    
+    
+  ];
 
 @NgModule({
   declarations: [

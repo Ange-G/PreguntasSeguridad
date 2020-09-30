@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preguntas de segridad</title>
+    <title>Preguntas de seguridad</title>
 </head>
 <body>
+
+
     <nz-layout class="layout">
         <nz-header>
+          
             <nz-descriptions class="colors" nzSize="small" [nzColumn]="6">
                 <nz-descriptions-item id="myHeader"nzTitle="Atendiendo a" [nzSpan]="1" clientes = "clientes">{{clientes.atendiendoA}}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Perfil" [nzSpan]="1"per = "per">{{per.aC}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Perfil" [nzSpan]="1" perfiles = "perfiles">{{perfiles.clasico}}</nz-descriptions-item>
               </nz-descriptions>
 
               <nz-descriptions nzSize="small" [nzColumn]="6">
-                <nz-descriptions-item nzTitle="Nombre" [nzSpan]="1"nom = "nom">{{nom.nombre}} {{nom.apellidoPaterno}} {{nom.apellidoMaterno}} </nz-descriptions-item>
-                <nz-descriptions-item nzTitle="No. Cliente" [nzSpan]="1" clientes = "clientes">{{clientes.noCliente}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Nombre" [nzSpan]="1" nombreC = "nombreC" >{{nombreC.nombre}} {{nombreC.apellidoPaterno}} {{nombreC.apellidoMaterno}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="No. Cliente" [nzSpan]="1"clientes = "clientes">{{clientes.noCliente}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="Telefono" [nzSpan]="1"clientes = "clientes">{{clientes.telefono}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="RFC" [nzSpan]="1"clientes = "clientes">{{clientes.rfc}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="Rol" [nzSpan]="1"clientes = "clientes">{{clientes.rol}}</nz-descriptions-item>
@@ -25,10 +28,10 @@
               </nz-descriptions>
     
               <nz-descriptions nzSize="small" [nzColumn]="6">
-                <nz-descriptions-item nzTitle="Email" [nzSpan]="1"clientes = "clientes">{{clientes.email}}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Nacionalidad" [nzSpan]="1"clientes = "clientes">{{clientes.nacionalidad}}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Sexo" [nzSpan]="1"clientes = "clientes">{{clientes.sexo}}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Edad" [nzSpan]="1"clientes = "clientes">{{clientes.edad}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Email" [nzSpan]="1" clientes = "clientes">{{clientes.email}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Nacionalidad" [nzSpan]="1" clientes = "clientes">{{clientes.telefono}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Sexo" [nzSpan]="1" clientes = "clientes">{{clientes.sexo}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Edad" [nzSpan]="1" clientes = "clientes">{{clientes.edad}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="Perfil" [nzSpan]="1"clientes = "clientes">{{clientes.perfilCliente}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="Reg.Portal" [nzSpan]="1">
                   <i class="icon2" nz-icon nzType="check-circle" nzTheme="twotone" [nzTwotoneColor]="'#1967D4'"></i>
@@ -55,24 +58,24 @@
                     <nz-descriptions  nzSize="small"  [nzColumn]="6">
                     <nz-descriptions-item class="DatosAzules" nzTitle="Poliza" [nzSpan]="1"> 
                         <nz-select>
-                            <nz-option nzValue="" poliza="poliza" nzLabel="{{poliza.noPoliza}}"></nz-option>
+                          <nz-option nzValue="" poliza="poliza" nzLabel="{{poliza.noPoliza}}"></nz-option>
                         </nz-select>
                       </nz-descriptions-item>
                       <nz-descriptions-item nzTitle="Version" [nzSpan]="1">
                         <nz-select>
-                            <nz-option nzValue="" poliza="poliza"  nzLabel="{{poliza.version}}"></nz-option>
+                          <nz-option nzValue="" poliza="poliza"  nzLabel="{{poliza.version}}"></nz-option>
                         </nz-select>
                       </nz-descriptions-item>
                       <nz-descriptions-item nzTitle="Ramo" [nzSpan]="1"><p ramos = "ramos">{{ramos.GMM}}</p></nz-descriptions-item>
                     </nz-descriptions>
                       <nz-descriptions nzSize="small" [nzColumn]="6">
-                      <nz-descriptions-item nzTitle="Estatus" [nzSpan]="1"><p poliza = "a">{{poliza.estatus}}
+                      <nz-descriptions-item nzTitle="Estatus" [nzSpan]="1"><p poliza = "poliza">{{poliza.estatus}}
                         <i nz-icon [nzType]="'check-circle'" [nzTheme]="'twotone'" [nzTwotoneColor]="'#52c41a'"></i>
                       </p></nz-descriptions-item>
-                      <nz-descriptions-item nzTitle="Segmento" [nzSpan]="1"><p poliza = "a">{{poliza.segmento}}</p></nz-descriptions-item>
-                      <nz-descriptions-item nzTitle="Producto" [nzSpan]="1"><p poliza = "a">{{poliza.producto}}</p></nz-descriptions-item> 
-                      <nz-descriptions-item nzTitle="Circulo" [nzSpan]="1"><p poliza = "a">{{poliza.circulo}}</p></nz-descriptions-item>
-                      <nz-descriptions-item nzTitle="Pagada hasta" [nzSpan]="1"><p poliza = "a">{{poliza.pagadoHasta}}</p></nz-descriptions-item>
+                      <nz-descriptions-item nzTitle="Segmento" [nzSpan]="1"><p poliza = "poliza">{{poliza.segmento}}l</p></nz-descriptions-item>
+                      <nz-descriptions-item nzTitle="Producto" [nzSpan]="1"><p poliza = "poliza">{{poliza.producto}}</p></nz-descriptions-item> 
+                      <nz-descriptions-item nzTitle="Circulo" [nzSpan]="1"><p poliza = "poliza">{{poliza.circulo}}</p></nz-descriptions-item>
+                      <nz-descriptions-item nzTitle="Pagada hasta" [nzSpan]="1"><p poliza = "poliza">{{poliza.pagadoHasta}}</p></nz-descriptions-item>
               
                     </nz-descriptions>
                   </nz-page-header-content>
