@@ -17,14 +17,9 @@ export class PreguntasSeguridadComponent implements OnInit {
   nombreC: any;
   claveCliente: string;
   roles:any;
-
+  p:any;
+  
   constructor(private db:AngularFireDatabase, private router: Router, private ActivatedRoute: ActivatedRoute) {
-
-    
-    
-
-    
-
   }
 //ruta dinamica
 
@@ -34,11 +29,17 @@ ngOnInit (): void  {
     this.claveCliente = String(parametros.get("claveCliente"));
     console.log("clave cliente",this.claveCliente)
     this.obtenerDatos(this.db, this.claveCliente);
+    this.obtenerRamos(this.db, this.claveCliente);
     } )
     
   }
 
+  obtenerRamos(db,claveCliente):void{
+    
+  }
   obtenerDatos(db, claveCliente): void{
+
+
      db.object(`/clientes/${claveCliente}/datosCliente`)
     .valueChanges()
     .subscribe(clientes=> {
@@ -60,25 +61,25 @@ ngOnInit (): void  {
     console.log(this.nombreC);
   });
 
-    db.object('/ramos')
-    .valueChanges()
-    .subscribe(ramos=> {
+  db.object(`/ramos/${this.claveCliente}`)
+  .valueChanges()
+  .subscribe(ramos=> {
     this.ramos= ramos;
-    console.log(this.ramos);
+    console.log("ramos", this.ramos);
   });
-
-   db.object('/perfiles')
-    .valueChanges()
-    .subscribe(perfiles=> {
+  
+  db.object(`/perfiles/${this.claveCliente}`)
+  .valueChanges()
+  .subscribe(perfiles=> {
     this.perfiles= perfiles;
-    console.log(this.perfiles);
+    console.log("perfiles",this.perfiles);
   });
-    db.object(`/roles`)
-    .valueChanges()
-    .subscribe(roles=> {
-    this.roles= roles;
-    console.log(this.roles);
-  });
+  db.object(`/roles/${this.claveCliente}`)
+  .valueChanges()
+  .subscribe(roles=> {
+  this.roles= roles;
+  console.log("roles",this.roles);
+ });
 
   }
 

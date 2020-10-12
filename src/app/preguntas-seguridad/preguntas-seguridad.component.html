@@ -13,7 +13,7 @@
           
             <nz-descriptions class="colors" nzSize="small" [nzColumn]="6">
                 <nz-descriptions-item id="myHeader"nzTitle="Atendiendo a" [nzSpan]="1" clientes = "clientes">{{clientes.atendiendoA}}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Perfil" [nzSpan]="1" perfiles = "perfiles">{{perfiles.clasico}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Perfil" [nzSpan]="1" perfiles = "perfiles">{{perfiles.perfilAtendiendo}}</nz-descriptions-item>
               </nz-descriptions>
 
               <nz-descriptions nzSize="small" [nzColumn]="6">
@@ -21,7 +21,7 @@
                 <nz-descriptions-item nzTitle="No. Cliente" [nzSpan]="1"clientes = "clientes">{{clientes.noCliente}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="Telefono" [nzSpan]="1"clientes = "clientes">{{clientes.telefono}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="RFC" [nzSpan]="1"clientes = "clientes">{{clientes.rfc}}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Rol" [nzSpan]="1"roles = "roles">{{roles.c}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Rol" [nzSpan]="1" roles = "roles">{{roles.rol}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="Reg" [nzSpan]="1">
                   <i class="icon3"nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#D43019'"></i>
                 </nz-descriptions-item>
@@ -32,7 +32,7 @@
                 <nz-descriptions-item nzTitle="Nacionalidad" [nzSpan]="1" clientes = "clientes">{{clientes.telefono}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="Sexo" [nzSpan]="1" clientes = "clientes">{{clientes.sexo}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="Edad" [nzSpan]="1" clientes = "clientes">{{clientes.edad}}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Perfil" [nzSpan]="1"clientes = "clientes">{{clientes.perfilCliente}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Perfil" [nzSpan]="1" perfiles = "perfiles">{{perfiles.perfilCliente}}</nz-descriptions-item>
                 <nz-descriptions-item nzTitle="Reg.Portal" [nzSpan]="1">
                   <i class="icon2" nz-icon nzType="check-circle" nzTheme="twotone" [nzTwotoneColor]="'#1967D4'"></i>
                 </nz-descriptions-item>
@@ -66,7 +66,7 @@
                           <nz-option nzValue="" poliza="poliza"  nzLabel="{{poliza.version}}"></nz-option>
                         </nz-select>
                       </nz-descriptions-item>
-                      <nz-descriptions-item nzTitle="Ramo" [nzSpan]="1"><p ramos = "ramos">{{ramos.GMM}}</p></nz-descriptions-item>
+                      <nz-descriptions-item nzTitle="Ramo" [nzSpan]="1"><p ramos = "ramos">{{ramos.ramo}}</p></nz-descriptions-item>
                     </nz-descriptions>
                       <nz-descriptions nzSize="small" [nzColumn]="6">
                       <nz-descriptions-item nzTitle="Estatus" [nzSpan]="1"><p poliza = "poliza">{{poliza.estatus}}
@@ -134,8 +134,11 @@
                   </nz-button-group>
                   <button class="btn3" nz-button nzType="primary">Medios de contacto</button>
                 </div>
+
         </nz-content>
-        <nz-footer></nz-footer>
+        <nz-footer>   
+         
+        </nz-footer>
       </nz-layout>
 </body>
 </html>
